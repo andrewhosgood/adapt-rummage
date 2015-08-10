@@ -1,0 +1,165 @@
+.rummage-component {
+	.rummage-inner {
+		.rummage-search-field {
+			width: 100%;
+			height: 26px;
+			margin-top: @body-text-margin;
+			padding: 0 5px;
+
+			display: block;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+		.rummage-search-results {
+			margin: 0 0 @body-text-margin;
+
+			text-align: right;
+		}
+
+		.rummage-search-pool {
+			margin: 0;
+
+			overflow: auto;
+
+			list-style: none;
+
+			li {
+				margin: 0 0 @item-spacing;
+				padding: 0;
+
+				.rummage-search-pool-item {
+					padding: @item-padding;
+
+					display: block;
+
+					overflow: hidden;
+
+					color: @item-text-color;
+					text-decoration: none;
+
+					background-color: @item-color;
+
+					.transition-background-color;
+
+					cursor: pointer;
+
+					img {
+						margin: 0 0 0 @item-padding;
+
+						display: inline-block;
+
+						float: right;
+
+						vertical-align: middle;
+					}
+
+					&.visited {
+						color: @item-text-visited-color;
+
+						background-color: lighten(@item-visited-color, 10%);
+
+						border-color: @item-border-visited-color;
+
+						/*.icon {
+							color: @item-text-visited-color;
+						}*/
+					}
+
+					&.selected {
+						color: @item-text-visited-color;
+
+						background-color: @item-visited-color;
+
+						border-color: @item-border-selected-color;
+
+						/*.icon {
+							color: @item-text-visited-color;
+						}*/
+					}
+
+					.no-touch & {
+						&:hover {
+							color: @item-text-hover-color;
+
+							background-color: @item-hover-color;
+
+							border-color: @item-border-hover-color;
+
+							/*.icon {
+								color: @item-text-hover-color;
+							}*/
+						}
+
+						&.visited:hover {
+							color: @item-text-visited-color;
+
+							background-color: @item-visited-color;
+
+							border-color: @item-border-visited-color;
+
+							/*.icon {
+								color: @item-text-visited-color;
+							}*/
+						}
+
+						&.selected:hover {
+							background-color: lighten(@item-visited-color, 10%);
+						}
+					}
+				}
+
+				.rummage-search-pool-item-details {
+					padding: @item-padding;
+
+					display: none;
+
+					overflow: hidden;
+				}
+
+				/*input[type="checkbox"] {
+					display: none;
+
+					&:checked {
+						~ .rummage-item-state {
+							.rummage-item-icon {
+								display: none;
+							}
+
+							.rummage-correct-icon {
+								display: block;
+							}
+						}
+					}
+				}*/
+			}
+
+			/*.rummage-item-state {
+				width: 25px;
+				margin-left: 15px;
+
+				float: right;
+
+				.rummage-item-icon {
+					display: none;
+				}
+
+				.rummage-answer-icon {
+					display: block;
+				}
+			}*/
+
+			.rummage-nomatch,
+			.no-results {
+				display: none;
+			}
+
+			&.rummage-noresults {
+				.no-results {
+					display: block;
+				}
+			}
+		}
+	}
+}
