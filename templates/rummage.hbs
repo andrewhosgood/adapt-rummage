@@ -1,0 +1,27 @@
+<div class="rummage-inner component-inner">
+    {{> component this}}
+	<div class="rummage-widget component-widget {{#unless _isEnabled}} disabled {{#if _isInteractionComplete}} complete submitted show-user-answer {{#if _isCorrect}}correct{{/if}} {{/if}} {{/unless}}">
+        <input type="search" id="rummage-search-field-{{_id}}" class="rummage-search-field">
+        <p class="rummage-search-results">Showing <span id="rummage-search-results-{{_id}}"></span> of <span id="rummage-search-pool-total-{{_id}}"></span></p>
+		<ul id="rummage-search-pool-{{_id}}" class="rummage-search-pool" style="max-height: {{maxHeight}};">
+			{{#each _items}}
+			<li data-rummage="{{rummage}},{{text}}">
+				<div class="rummage-search-pool-item component-item-text-color{{#unless ../_isEnabled}} disabled {{/unless}}{{#if _isSelected}} selected{{/if}}">
+                    <!--<input type="checkbox" id="{{../_id}}-{{@index}}">
+                    <div class="rummage-item-state">
+                        <div class="rummage-item-icon rummage-answer-icon {{#if ../_isRadio}}radio{{else}}checkbox{{/if}} component-item-text-color icon"></div>
+                        <div class="rummage-item-icon rummage-correct-icon icon icon-tick"></div>
+                        <div class="rummage-item-icon rummage-incorrect-icon icon icon-cross"></div>
+                    </div>-->
+                    <img src="/course/en/images/flags/{{lowerCase rummage}}.png">
+                    {{{text}}}
+                </div>
+                <div class="rummage-search-pool-item-details">
+                    <p>Details about {{{text}}}</p>
+                </div>
+			</li>
+			{{/each}}
+            <li class="no-results">No results found</li>
+		</ul>
+	</div>
+</div>
